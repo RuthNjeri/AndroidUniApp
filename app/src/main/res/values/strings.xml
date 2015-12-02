@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">University</string>
+    <string name="app_name">Kenyan Universities</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_public">PublicActivity</string>
     <string name="title_activity_private">PrivateActivity</string>

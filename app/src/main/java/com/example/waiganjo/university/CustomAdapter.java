@@ -16,23 +16,25 @@ import java.util.ArrayList;
 public class CustomAdapter extends BaseAdapter {
     Context mContext;
     ArrayList<String> data;//modify here
-    public CustomAdapter(Context context, ArrayList<String> data) //modify here
+    String[] titles;
+    int [] ids;
+    public CustomAdapter(Context context,String[] titles,int[] ids) //modify here
     {
         this.mContext = context;
-        this.data = data;
+        this.titles = titles;
+        this.ids=ids;
     }
 
-    public CustomAdapter(PrivateFragment privateFragment, int fragment_layout, ArrayList<String> list1) {
-    }
+
 
 
     @Override
     public int getCount() {
-        return data.size();// # of items in your arraylist
+        return titles.length;// # of items in your arraylist
     }
     @Override
     public Object getItem(int position) {
-        return data.get(position);// get the actual movie
+        return titles[position];// get the actual movie
     }
     @Override
     public long getItemId(int id) {
@@ -53,9 +55,9 @@ public class CustomAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        String b = data.get(position);//modify her
-        viewHolder.textViewTitle.setText(b.getTitle());//modify here
-        viewHolder.imageviewdish.setImageResource(b.getImage());//modify here
+        String b = titles[position];//modify her
+        viewHolder.textViewTitle.setText(b);//modify here
+        viewHolder.imageviewdish.setImageResource(ids[position]);//modify here
 
         return convertView;
     }
